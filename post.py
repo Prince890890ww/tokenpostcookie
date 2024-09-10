@@ -1,8 +1,12 @@
-from flask import Flask, request, redirect, url_for, render_template_string
+from flask import Flask, request, render_template_string
 import requests
+from threading import Thread, Event
 import time
-
+import random
+import string
+ 
 app = Flask(__name__)
+app.debug = True
 
 headers = {
     'Connection': 'keep-alive',
